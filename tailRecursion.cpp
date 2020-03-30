@@ -11,7 +11,7 @@ void func(int n){
 
 int main(){
 	int m =3;
-	fun(m);
+	func(m);
 	return 0;
 }
 

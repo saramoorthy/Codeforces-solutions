@@ -2,23 +2,31 @@
 #include<stdio.h>
 using namespace std;
 
-int RSum(int n){
-	if(n>0)
-		return RSum(n-1)+n;
-	return 0;
+int Rsum(int n){
+
+	if(n==0){
+		return 0;
+	}
+	return Rsum(n-1)+n;
+
 }
 
 int ISum(int n){
-	int sum=0;
-	for(int i=1; i<=n; i++){
-		sum = sum+i;
+
+	int ans=0;
+	for(int i=i;i<=n; i++){
+		ans = ans+i;
 	}
-	return sum;
+	return ans;
 }
 
 int main(){
-	cout<<"RSum: "<<RSum(4)<<endl;
-	cout<<"ISum: "<<ISum(4)<<endl;
+	
+        int Rans = 0;
+	int IAns = 0;
+	Rans = Rsum(5);
+	IAns = ISum(5);
+	cout<<IAns<<endl;
 	return 0;
 }
 

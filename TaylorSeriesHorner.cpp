@@ -3,16 +3,19 @@
 
 using namespace std;
 
-double e(double x, double n){
-	static double ans=1.0;
-	if(n>0){
-		ans = 1.0+(x/n)*ans;	
-		e(x,n-1);
-	}
-    return ans;
+double eH(int x, int n){
+    static double ans;
+    
+    if(n == 0)
+        return ans;
+    ans = 1+ x * ans/n;
+    
+    return eH(x, n-1);
+
+    
 }
 int main(){
 
-	cout<<e(1,10)<<endl;
-	return 0;
+    cout<<eH(1,10)<<endl;
+    return 0;
 }

@@ -15,29 +15,26 @@
 //Output
 //Output the number of participants who advance to the next round.
 
+#include<iostream>
 
-#include <iostream>
 using namespace std;
 
-int main() {
-    
-    
-    int n, k,sum=0;
+
+int main(){
+    int n,k,val;
+    int count=0;
+    int kval=0;
     cin>>n>>k;
-    
-    int a[n];
-    for(int i=0;i<n;i++)
-        cin>>a[i];
-    for(int i=0;i<n;i++)
-    {
-        if(a[i]>=a[k-1] &&a[i]>0)
-        {
-            sum++;
-        }
-        
+
+    for(int i=0;i<n;i++){
+        cin>>val;
+        if(i==k-1)
+            kval=val;
+
+        if(val>=kval && val>0)
+            count++;
+
     }
-    cout<<sum;
-    
-    
+    cout<<count;
     return 0;
 }

@@ -12,22 +12,32 @@
 //Output
 //Print a single integer — the number of problems the friends will implement on the contest.
 
-#include <iostream>
-#include <string>
+#include<iostream>
+
 using namespace std;
 
-int main() {
-    
-    
-    int n,p1,p2,p3,solved=0;
+int main(){
+
+    int n;
+    int p,v,t;
+    p=v=t=0;
+    int ans=0;
     cin>>n;
+
     for(int i=0;i<n;i++)
     {
-        cin>>p1>>p2>>p3;
-        if((p1+p2+p3)>1)
-            solved++;
+        int count=0;
+        cin>>p>>v>>t;
+        if(p==1)
+            count++;
+        if(v==1)
+            count++;
+        if(t==1)
+            count++;
+
+        if(count>1)
+            ans++;
     }
-    cout<<solved<<endl;
+    cout<<ans<<endl;
     return 0;
 }
-

@@ -17,30 +17,29 @@
 //Output
 //Print the resulting string. It is guaranteed that this string is not empty.
 
+#include<iostream>
+#include<string>
 
-#include <iostream>
-#include <string>
 using namespace std;
 
-int main() {
-    
-    
-    string str,str2;
-    cin>>str;
-    int len=str.length();
-    
-    for(int i=0;i<len;i++)
-    {
-        
-        if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'||str[i]=='y'||str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U'||str[i]=='Y')
-            continue;
-        else
-        {
-            str2+='.';
-            str2+=tolower(str[i]);
-        }
-    }
-    cout<<str2<<endl;
-    return 0;
-}
+int main(){
 
+    string str,ans="";
+    cin>>str;
+    int len = str.length();
+
+   for(int i=0;i<len;i++){
+
+        if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'||str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U'||str[i]=='y'||str[i]=='Y')
+            continue;
+        else {
+            ans+='.';
+            ans += tolower(str[i]);
+        
+        }
+
+    } 
+    cout<<ans<<endl;
+    return 0;
+
+}

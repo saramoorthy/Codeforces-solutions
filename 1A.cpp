@@ -11,6 +11,9 @@
 //Output
 //Write the needed number of flagstones.
 
+
+
+
 #include <iostream>
 #include <math.h>
 using namespace std;
@@ -19,13 +22,13 @@ int main() {
     
     
     double n, m, a;
-    cin >> n >> m >> a;
-    cout << (long long) ceil(n/a)* (long long) ceil(m/a) << endl;
-    
-    
+
+    cin>>n>>m>>a;
+    cout<<(long long)ceil(n/a)*(long long)ceil(m/a);
     return 0;
 }
 
 
-
+// 1. ceil can be used only with float, double, long double etc ie point value data types
+// 2. long long int typecasting to preserve int result format
 

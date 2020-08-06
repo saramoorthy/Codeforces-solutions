@@ -13,20 +13,19 @@
 //
 //Print YES, if the boys can divide the watermelon into two parts, each of them weighing even number of kilos; and NO in the opposite case.
 
-#include <iostream>
-
-
+#include<iostream>
 using namespace std;
 
-int main() {
-    
+int main(){
+
     int n;
     cin>>n;
-    if(n%2==1)
-        cout<<"NO"<<endl;
+    if(n%2 == 1)
+        cout<<"NO";
     else if(n==2)
-        cout<<"NO"<<endl;
+        cout<<"NO";
     else
-        cout<<"YES"<<endl;
+        cout<<"YES";
+
     return 0;
 }

@@ -12,14 +12,17 @@
 //Output
 //Output the given word after capitalization.
 
-#include <iostream>
+
+#include<iostream>
+#include<string>
 using namespace std;
 
-int main() {
+int main(){
     string str;
     cin>>str;
-    int len=str.length();
-    str[0]=toupper(str[0]);
+    str[0]= toupper(str[0]);
     cout<<str<<endl;
+
+
     return 0;
 }

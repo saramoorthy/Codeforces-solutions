@@ -20,24 +20,23 @@
 //
 //2,1
 
-
-#include <iostream>
+#include<iostream>
+#include<math.h>
 using namespace std;
 
-int main() {
-    int matrix[5][5];int ans=0;
-    
-    for(int i=0;i<5;i++){
-        for(int j=0;j<5;j++){
-            cin>>matrix[i][j];
-            if(matrix[i][j]==1)
-            {
-                ans=abs(i-2)+abs(j-2);
-            }
+int main(){
+
+    int a[5][5];
+    int ans=0;
+    for(int i=0; i<5; i++){
+        for(int j=0; j<5; j++){
+
+            cin>>a[i][j];
+            if(a[i][j]==1)
+                ans = abs(i-2)+abs(j-2);
         }
     }
     cout<<ans<<endl;
+
     return 0;
 }
-
-

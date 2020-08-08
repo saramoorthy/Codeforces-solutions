@@ -12,25 +12,32 @@
 //Print "YES" if the situation is dangerous. Otherwise, print "NO".
 
 #include <iostream>
+
 using namespace std;
 
-int main() {
+int main(){
+
     string str;
-    int count=1,max=0;
     cin>>str;
-    int len=str.length();
-    for(int i=0;i<len;i++){
-        if(str[i]==str[i+1])
-            ++count;
-        else{
-            if(count>max)
-                max=count;
-            count=1;
+
+    int max=0;
+    int counter =0;
+    for(int i=0; i<str.length()-1; i++){
+        
+        if(str[i]==str[i+1]){
+            counter++;
+            if(counter+1>max)
+              max=counter+1;
+ 
+          
+        }else{
+            counter=0;
         }
-    }
+        
+        }
     if(max>6)
         cout<<"YES"<<endl;
-    if(max<7)
+    else
         cout<<"NO"<<endl;
-    return 0;
+
 }

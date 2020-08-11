@@ -1,41 +1,62 @@
-//158B - Taxi
-//
-//https://codeforces.com/problemset/problem/158/B
-//
-//
-//After the lessons n groups of schoolchildren went outside and decided to visit Polycarpus to celebrate his birthday. We know that the i-th group consists of si friends (1 ≤ si ≤ 4), and they want to go to Polycarpus together. They decided to get there by taxi. Each car can carry at most four passengers. What minimum number of cars will the children need if all members of each group should ride in the same taxi (but one taxi can take more than one group)?
-//
-//Input
-//The first line contains integer n (1 ≤ n ≤ 105) — the number of groups of schoolchildren. The second line contains a sequence of integers s1, s2, ..., sn (1 ≤ si ≤ 4). The integers are separated by a space, si is the number of children in the i-th group.
-//
-//Output
-//Print the single number — the minimum number of taxis necessary to drive all children to Polycarpus.
-
-
-#include <iostream>
+#include<iostream>
+#include<vector>
+#include<algorithm>
 
 using namespace std;
 
-int main() {
-    int n,a,sum=0;
-    int count[5]={0};
-    cin>>n;
+int main(){
     
-    while(n--){
-        cin>>a;
-        count[a]+=1;
+    int n;
+    cin>>n;
+    int count=0;
+    int fill = 0;
+    int i=0;
+    int total=0;
+    int j = n-1;
+    int flag =0;
+    vector<int> groups;
+    
+    for(int j=0;j<n;j++){
+        int input;
+        cin>>input;
+        total += input;
+        groups.push_back(input);
     }
-    sum=count[4]+count[3]+count[2]/2;
-    count[1]-=count[3];
-    if(count[2]%2==1){
-        sum+=1;
-        count[1]-=2;
+        
+    sort(groups.begin(), groups.end());
+    
+    while(i<j){
+        if(fill+groups.at(i) < 5){
+            if(fill+groups.at(i)+groups.at(j) < 5){
+                fill = fill+groups.at(i)+groups.at(j);
+                i++;
+                j--;
+                
+                
+                if(fill==total || fill==4){
+                    count++;
+                    flag=1;
+                }
+                
+                }else{
+                    j--;
+                    count++;
+                }
+           
+        }else{
+           
+            fill=0;
+            
+        }
+     
+    
     }
-    if (count[1] > 0)
-    {
-        sum += (count[1] + 3) / 4;
-    }
-    cout<<sum<<endl;
+  
+    if(i>=j )
+        count++;
+    
+    cout<<count<<endl;
     return 0;
+    
+    //1 1 2 2 3 3 4 4
 }
-

@@ -1,5 +1,7 @@
 
 /*
+
+ 785 A
  Anton's favourite geometric figures are regular polyhedrons. Note that there are five kinds of regular polyhedrons:
 
 Tetrahedron. Tetrahedron has 4 triangular faces.
